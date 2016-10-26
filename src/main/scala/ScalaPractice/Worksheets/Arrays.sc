@@ -42,4 +42,20 @@ object Arrays {
   majorityItem(Array(1,1,1,1,1,2))
   majorityItem(Array(1, 2, 1, 2, 1))
   majorityItem(Array(1, 2, 1, 2, 2))
+
+  def shuffle(array: Array[Int]) = {
+    val indices = array.length - 1
+    for (i <- 0 to indices) {
+      val shuffleIndex = ((Math.random()*(array.length - i)) + i).toInt
+      val temp = array(i)
+      array(i) = array(shuffleIndex)
+      array(shuffleIndex) = temp
+    }
+    array
+  }
+  shuffle(1 to 10 toArray)
+  shuffle(1 to 10 toArray)
+  shuffle(1 to 10 toArray)
+  shuffle(1 to 10 toArray)
+
 }
